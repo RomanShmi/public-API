@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Locator</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://www.gstatic.com/external_hosted/handlebars/v4.7.6/handlebars.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="/src/css/style.css" rel="stylesheet">
+ 
+
+
+  <script>
+    const CONFIGURATION = {
+      "locations": [
+        { "title": "Death Valley National Park", "address1": "California", "address2": "United States", "coords": { "lat": 36.4617, "lng": -116.8668 }, "placeId": "ChIJR4qudndLx4ARVLDye3zwycw" }
+      ],
+      "mapOptions": { "center": { "lat": 38.0, "lng": -100.0 }, "fullscreenControl": true, "mapTypeControl": false, "streetViewControl": false, "zoom": 4, "zoomControl": true, "maxZoom": 17 },
+      "mapsApiKey": "AIzaSyDyyNYZy75aI_zCAAJkAISZxYqDchfGplk"
+    };
+
+    function initMap() {
+      new LocatorPlus(CONFIGURATION);
+    }
+  </script>
+
+  <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
+      {{#each locations}}
+        <li class="location-result" data-location-index="{{index}}">
+          <button class="select-location">
+            <h2 class="name">{{title}}</h2>
+          </button>
+          <div class="address">{{address1}}<br>{{address2}}</div>
+        </li>
+      {{/each}}
+    </script>
+
+
+
+</head>
+
+
+<body>
+  
+  <a href="map/map.html">MAP</a>
+  <div>
+    <hr />
+
+
+
+    <h2> Enter your name</h2> <span id="name1"></span>
+    <br /><br />
+    <input type="text" id="zip" />
+    <br />
+    <button id="submit" onclick="GetChack()">joke</button>
+    <br /><br />
+
+
+
+    <span id="temp1"> </span>
+
+    <hr />
+    <hr />
+
+
+
+
+
+
+
+    <button id="nasa" onclick="GetNASA()">NASA</button>
+
+
+    <div id="text1"> </div>
+    <div id="pic1"> </div>
+
+
+  </div>
+
+  <hr />
+  <hr />
+
+
+
+  <script type="text/javascript" src="/src/js/app.js"></script>
+</body>
+
+</html>
