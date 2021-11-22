@@ -11,18 +11,18 @@ const text1=document.getElementById("text1");
 function GetChack(){
   console.log("woogy");
   const name1 = document.getElementById('zip').value;
-  
+  const name2 ="";
 
   console.log(name1);
-  console.log(name2);
+  
 
 fetch(`https://api.icndb.com/jokes/random/?firstName=${name1}&lastName=${name2}`)
 .then(response => response.json())
 .then(woogy => {
 
-  console.log(woogy);
+  console.log(woogy.value.joke);
 
-  tempElement.innerText =woogy.value.joke;
+  tempElement.innerText =woogy.value.joke+"  ggg";
 });
 
 }
